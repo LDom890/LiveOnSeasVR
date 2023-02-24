@@ -42,12 +42,14 @@ namespace UnityEngine.XR.OpenXR.Samples.ControllerSample
 
             while (isActiveAndEnabled)
             {
-                if(_actionReference.action != null &&
+                if (_actionReference.action != null &&
                     _actionReference.action.controls.Count > 0 &&
                     _actionReference.action.controls[0].device != null &&
                     OpenXRInput.TryGetInputSourceName(_actionReference.action, 0, out var actionName, OpenXRInput.InputSourceNameFlags.Component, _actionReference.action.controls[0].device))
                 {
-                    if(null != _text)
+                    Debug.Log("TomasteAlgo");///-------------------------------------------------------------------------------------------------------------------------
+
+                    if (null != _text)
                         _text.text = actionName;
                     OnActionBound();
                     break;
